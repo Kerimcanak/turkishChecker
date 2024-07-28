@@ -1,2 +1,2 @@
 # turkishChecker
-Turkish character checker application (Work in Progress)
+Turkish language checker application (Work in Progress)
