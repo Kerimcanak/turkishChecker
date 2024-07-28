@@ -1,11 +1,22 @@
 import viteLogo from '/vite.svg'
 import './App.css'
+import i18n from 'i18n';
 
 function App() {
-  function check(formData) {
-    const query = formData.get("query");
-    alert(`You searched for '${query}'`);
+  async function check(event) {
+    event.preventDefault(); // Prevent the default form submission
+    const textarea = event.target.querySelector('textarea[name="query"]');
+    const enteredText = textarea.value;
+    
+    try {
+      let languageText = await i18n.detectLanguage(enteredText);
+      alert(`You entered: ${languageText}`);
+    } catch (error) {
+      console.error('Error detecting language:', error);
+      alert('There was an error detecting the language.');
+    }
   }
+  
 
   return (
     < >
