@@ -14,6 +14,7 @@ function App() {
     const enteredText = textarea.value;
     if (enteredText.length < 18) {
       alert("Not enough characters to analyze language. Please enter at least 18 characters.");
+      setLanguageState("Undetermined");
     } else {
       const tur = "tur";
       if (franc(enteredText) !== tur) {
