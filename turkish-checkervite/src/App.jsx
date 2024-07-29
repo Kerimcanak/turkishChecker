@@ -7,7 +7,11 @@ function App() {
     event.preventDefault(); // Prevent the default form submission
     const textarea = event.target.querySelector('textarea[name="query"]');
     const enteredText = textarea.value;
-    alert(`Text is in ${franc(enteredText)} language`);
+    if (enteredText.length < 18) {
+      alert("Not enough characters to analyse language. Please enter at least 18 characters.");
+    } else {
+      alert(`Text is in ${franc(enteredText)} language`);
+    }
   }
   
 
