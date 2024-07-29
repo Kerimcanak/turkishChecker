@@ -1,20 +1,13 @@
 import viteLogo from '/vite.svg'
 import './App.css'
-import i18n from 'i18n';
+import { franc } from 'franc';
 
 function App() {
-  async function check(event) {
+  function check(event) {
     event.preventDefault(); // Prevent the default form submission
     const textarea = event.target.querySelector('textarea[name="query"]');
     const enteredText = textarea.value;
-    
-    try {
-      let languageText = await i18n.detectLanguage(enteredText);
-      alert(`You entered: ${languageText}`);
-    } catch (error) {
-      console.error('Error detecting language:', error);
-      alert('There was an error detecting the language.');
-    }
+    alert(`Text is in ${franc(enteredText)} language`);
   }
   
 
